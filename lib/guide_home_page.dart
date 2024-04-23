@@ -33,14 +33,6 @@ class NewsHomePage extends StatelessWidget {
           "Guide",
           style: TextStyle(fontSize: 37, fontWeight: FontWeight.bold),
         ),
-        const SizedBox(
-          height: 12,
-        ),
-        // for search bar
-        searchabar(),
-        const SizedBox(
-          height: 20,
-        ),
         forImages(context),
         const SizedBox(
           height: 10,
@@ -56,14 +48,6 @@ class NewsHomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               Spacer(),
-              Text(
-                "See more",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black45,
-                ),
-              ),
             ],
           ),
         ),
@@ -71,7 +55,7 @@ class NewsHomePage extends StatelessWidget {
           height: 15,
         ),
         SizedBox(
-          height: 220,
+          height: 180,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: newsItems.length,
@@ -121,31 +105,7 @@ class NewsHomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-
-                        Container(
-                          decoration: BoxDecoration(
-                            color: news.color.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(10.0),
-                            border: Border.all(
-                              color: news.color.withOpacity(0.4),
-                              width: 1.5,
-                            ),
-                          ),
-                          margin: EdgeInsets.only(left: 10, top: 5),
-                          padding: EdgeInsets.symmetric(
-                              vertical: 5.0, horizontal: 10.0),
-                          child: Text(
-                            news.newsCategories,
-                            style: TextStyle(
-                              color: news.color,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        // )
+                        
                       ],
                     ),
                   ),
@@ -168,21 +128,13 @@ class NewsHomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
-                  Text(
-                    "See more",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black45,
-                    ),
-                  ),
                 ],
               ),
               const SizedBox(
                 height: 15,
               ),
               SizedBox(
-                height: 220,
+                height: 180,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: videoItems.length,
@@ -250,28 +202,6 @@ class NewsHomePage extends StatelessWidget {
                               const SizedBox(
                                 height: 5,
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: video.color.withOpacity(0.2),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                    color: video.color.withOpacity(0.4),
-                                    width: 1.5,
-                                  ),
-                                ),
-                                margin: EdgeInsets.only(left: 10, top: 5),
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5.0,
-                                  horizontal: 10.0,
-                                ),
-                                child: Text(
-                                  video.category,
-                                  style: TextStyle(
-                                    color: video.color,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              )
                             ],
                           ),
                         ),
@@ -298,7 +228,7 @@ class NewsHomePage extends StatelessWidget {
             Positioned(
               left: 0,
               child: Image.asset(
-                "Images/1.png",
+                "assets/images/1.png",
                 height: MediaQuery.of(context).size.height * 0.3,
                 width: MediaQuery.of(context).size.width * 0.95,
                 fit: BoxFit.contain,
@@ -310,32 +240,6 @@ class NewsHomePage extends StatelessWidget {
     );
   }
 
-  Padding searchabar() {
-    return Padding(
-      padding: const EdgeInsets.only(right: 20),
-      child: Container(
-        height: 55,
-        decoration: BoxDecoration(
-            color: const Color.fromARGB(31, 151, 146, 146),
-            borderRadius: BorderRadius.circular(20)),
-        child: const Center(
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: "Search",
-              hintStyle: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black45),
-              prefixIcon: Icon(
-                Icons.search,
-                size: 30,
-                color: Colors.black45,
-              ),
-              border: InputBorder.none,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  
+  
 }
